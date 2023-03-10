@@ -1,36 +1,29 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Particle {
     private final int id;
     private final double radius;
-    private final double mass;
+    private final double property;
     private double x;
     private double y;
-
     private List<Particle> neighbours;
-
-    public List<Particle> getNeighbours() {
-        return neighbours;
-    }
-
-    public void setNeighbours(List<Particle> neighbours) {
-        this.neighbours = neighbours;
-    }
 
     public Particle(int id, double radius, double mass) {
         this.id = id;
         this.radius = radius;
-        this.mass = mass;
+        this.property = mass;
         this.neighbours = new ArrayList<>();
     }
 
     @Override
     public String toString() {
-        return "Particle{" +
+        return "src.Particle{" +
                 "id=" + id +
                 ", radius=" + radius +
-                ", mass=" + mass +
+                ", property=" + property +
                 ", x=" + x +
                 ", y=" + y +
                 '}';
@@ -44,8 +37,8 @@ public class Particle {
         return radius;
     }
 
-    public double getMass() {
-        return mass;
+    public double getProperty() {
+        return property;
     }
 
     public double getX() {
@@ -54,6 +47,10 @@ public class Particle {
 
     public double getY() {
         return y;
+    }
+
+    public List<Particle> getNeighbours() {
+        return neighbours;
     }
 
     public void setX(double x) {

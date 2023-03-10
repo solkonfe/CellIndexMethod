@@ -13,7 +13,7 @@ index = 1
 
 with open('data_ovito.txt', 'w') as f:
     f.write(lines_s[0].replace(" ", ""))
-    f.write('Particle data for ovito. Index, x, y, radius\n')
+    f.write('src.Particle data for ovito. Index, x, y, radius\n')
     j = 2
     for i in range(1, len(lines_d)):
         str_n = str(index) + lines_d[i].replace("   ", "    ").replace("\n", "") + lines_s[j].replace("   ", "   ").replace("\n", "   ")
