@@ -7,6 +7,7 @@ public class Cell {
     private int min_y;
     private int max_x;
     private int max_y;
+
     private List<Particle> particles;
     private List<Integer> neighbours;
 
@@ -43,7 +44,11 @@ public class Cell {
     }
 
     public List<Particle> getParticles() {
-        return particles;
+        return new ArrayList<>(particles);
+    }
+
+    public void addParticle(Particle p){
+        particles.add(p);
     }
 
     public List<Integer> getNeighbours() {

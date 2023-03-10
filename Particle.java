@@ -2,10 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Particle {
+    private final int id;
+    private final double radius;
+    private final double mass;
     private double x;
     private double y;
-    private static int num;
-    private int id;
 
     private List<Particle> neighbours;
 
@@ -17,15 +18,34 @@ public class Particle {
         this.neighbours = neighbours;
     }
 
-    public Particle(double x, double y) {
-        this.x = x;
-        this.y = y;
-        this.id = num++;
+    public Particle(int id, double radius, double mass) {
+        this.id = id;
+        this.radius = radius;
+        this.mass = mass;
         this.neighbours = new ArrayList<>();
+    }
+
+    @Override
+    public String toString() {
+        return "Particle{" +
+                "id=" + id +
+                ", radius=" + radius +
+                ", mass=" + mass +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
     }
 
     public int getId() {
         return id;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public double getMass() {
+        return mass;
     }
 
     public double getX() {
@@ -36,8 +56,12 @@ public class Particle {
         return y;
     }
 
-    public static int getNum() {
-        return num;
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 }
 
