@@ -184,8 +184,8 @@ public class Cell_Index_Method {
                 str.append(neighbourId).append("\t");
             }
             str.append("\n");
-            writer.write(str.toString());
         }
+        writer.write(str.toString());
         writer.close();
 
         long endTime = System.currentTimeMillis();
